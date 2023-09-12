@@ -7,14 +7,20 @@ title: "Contact"
 ## Instructors
 **Tyler Scott**
 <i class="fa fa-envelope-square" aria-hidden="true"></i> [email](mailto:tascott@ucdavis.edu)  
-Drop-in hours:
+Drop-in working session (in person): Tuesday 1-3pm, Wickson 2120B
+
+**Tessa Putz**
+<i class="fa fa-envelope-square" aria-hidden="true"></i> [email](mailto:trputz@ucdavis.edu)  
+Drop-in working session (in person): Tuesday 1-3pm, Wickson 2120B
+
+**Elise Zufall**
+<i class="fa fa-envelope-square" aria-hidden="true"></i> [email](mailto:ezufall@ucdavis.edu)  
+Drop-in working session (in person): Tuesday 1-3pm, Wickson 2120B
 
 
 **Liza Wood**
 <i class="fa fa-envelope-square" aria-hidden="true"></i> [email](mailto:belwood@ucdavis.edu)  
 Drop-in working session (in person): Tuesday 
-
-I am a PhD candidate in the GGE (5th year) studying environmental governance of agricultural systems. I was new to R (and very intimidated) when entering my PhD in 2018, but through a couple courses like R-DAVIS and **a lot** of muddling through self-teaching, I'm now excited about helping promote data literacy. These days, I use R for analyzing survey data and making interactive ShinyApps to share my summary statistics, as well as analyzing large amounts of text data scraped from online documents.
 
 **Tara Pozzi**
 <i class="fa fa-envelope-square" aria-hidden="true"></i> [email](mailto:)  
@@ -60,6 +66,12 @@ I am a PhD candidate in the GGE (5th year) studying environmental governance of 
 [<i class="fa fa-github-square" aria-hidden="true"></i> mikoontz](https://github.com/mikoontz)  
 [<i class="ai ai-orcid-square"></i> orcid.org/0000-0002-8276-210X](https://orcid.org/0000-0002-8276-210X)  
 
+**Liza Wood**
+<i class="fa fa-envelope-square" aria-hidden="true"></i> [email](mailto:belwood@ucdavis.edu)  
+Drop-in working session (in person): Tuesday 
+
+**Tara Pozzi**
+<i class="fa fa-envelope-square" aria-hidden="true"></i> [email](mailto:)  
 
 ## Former Teaching Assistants/Classroom Helpers
 
