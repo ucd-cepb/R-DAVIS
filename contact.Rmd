@@ -27,14 +27,12 @@ Drop-in working session (in person): Tuesday 1-3pm, Wickson 2120B
 [<i class="fa fa-github-square" aria-hidden="true"></i> JepsonNomad](https://github.com/JepsonNomad)  
 
 **Michael Culshaw-Maurer** 
-
 <i class="fa fa-envelope-square" aria-hidden="true"></i> [email](mailto:mjculshawmaurer@ucdavis.edu)  
 [<i class="fa fa-globe" aria-hidden="true"></i> website](https://mcmaurer.github.io/)  
 [<i class="fa fa-twitter-square" aria-hidden="true"></i> \@MCulshawMaurer](https://twitter.com/MCulshawMaurer)  
 [<i class="fa fa-github-square" aria-hidden="true"></i> MCMaurer](https://github.com/mcmaurer)  
 
 **Martha Zillig** 
-
 <i class="fa fa-envelope-square" aria-hidden="true"></i> [email](mailto:mwohlfeil@ucdavis.edu)  
 [<i class="fa fa-globe" aria-hidden="true"></i> website](https://marthawohlfeil.github.io/)  
 [<i class="fa fa-github-square" aria-hidden="true"></i> MarthaWohlfeil](https://github.com/MarthaWohlfeil)  
@@ -42,7 +40,6 @@ Drop-in working session (in person): Tuesday 1-3pm, Wickson 2120B
 
 
 **Ryan Peek** 
-
 <i class="fa fa-envelope-square" aria-hidden="true"></i> [email](mailto:rapeek@ucdavis.edu)  
 [<i class="fa fa-globe" aria-hidden="true"></i> website](https://ryanpeek.github.io/)  
 [<i class="fa fa-twitter-square" aria-hidden="true"></i> \@riverpeek](https://twitter.com/riverpeek)  
@@ -51,7 +48,6 @@ Drop-in working session (in person): Tuesday 1-3pm, Wickson 2120B
 
 
 **Michael Koontz** 
-
 <i class="fa fa-envelope-square" aria-hidden="true"></i> [email](mailto:mikoontz@gmail.com)  
 [<i class="fa fa-globe" aria-hidden="true"></i> website](https://michaeljkoontz.weebly.com/)  
 [<i class="fa fa-twitter-square" aria-hidden="true"></i> \@_mikoontz](https://twitter.com/_mikoontz)  
@@ -60,7 +56,7 @@ Drop-in working session (in person): Tuesday 1-3pm, Wickson 2120B
 
 **Liza Wood**
 <i class="fa fa-envelope-square" aria-hidden="true"></i> [email](mailto:belwood@ucdavis.edu)  
-Drop-in working session (in person): Tuesday 
+ 
 
 **Tara Pozzi**
 <i class="fa fa-envelope-square" aria-hidden="true"></i> [email](mailto:)  

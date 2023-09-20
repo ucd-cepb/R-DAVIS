@@ -13,7 +13,7 @@
 
 <title>Iteration, Iteration, Iteration, Iter</title>
 
-<script src="site_libs/header-attrs-2.18/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -36,8 +36,8 @@
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.2.1/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.2.1/css/v4-shims.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="site_libs_extra/academicons-1.8.0/css/academicons.css"/>
 
 <style type="text/css">
@@ -667,6 +667,16 @@ different member of the family.</p>
 ##         vs         am       gear       carb 
 ##   0.437500   0.406250   3.687500   2.812500</code></pre>
 <pre class="r"><code>mtcars %&gt;% map_chr(mean) # gives a character vector</code></pre>
+<pre><code>## Warning: Automatic coercion from double to
+## character was deprecated in purrr
+## 1.0.0.
+## ℹ Please use an explicit call to
+##   `as.character()` within `map_chr()`
+##   instead.
+## Call
+## `lifecycle::last_lifecycle_warnings()`
+## to see where this warning was
+## generated.</code></pre>
 <pre><code>##          mpg          cyl         disp           hp         drat           wt 
 ##  &quot;20.090625&quot;   &quot;6.187500&quot; &quot;230.721875&quot; &quot;146.687500&quot;   &quot;3.596563&quot;   &quot;3.217250&quot; 
 ##         qsec           vs           am         gear         carb 
@@ -832,7 +842,7 @@ dataframe.</p>
 ##  8 0.596   0   0.189  0.0353 0.429 0.429 0.655     1     0   0.5 0.143     0.429
 ##  9 0.528   0   0.174  0.152  0.535 0.419 1         1     0   0.5 0.143     0.419
 ## 10 0.374   0.5 0.241  0.251  0.535 0.493 0.452     1     0   0.5 0.429     0.493
-## # … with 22 more rows</code></pre>
+## # ℹ 22 more rows</code></pre>
 <p>There you have it! We went from some code that calculated one value
 to being able to iterate it across any number of columns in a dataframe.
 It can be tempting to jump straight to your final iteration code, but
