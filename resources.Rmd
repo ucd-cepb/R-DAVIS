@@ -96,4 +96,4 @@ This is a list of most of the data sources used in this course.
 
 ### Quantitative Courses
 
-[This is a list of quantitative courses](https://docs.google.com/spreadsheets/d/1aENRlOvGxgvLS4DCiJy6WuhzQCc7LYZAVSqbHHBSzWA/edit?usp=sharing) commonly taken by students in the Graduate Group in Ecology at UC Davis. For those of you taking the course in person, these are classes you may end up taking in the future that will put your new R skills to use.
+[This is a list of quantitative courses](https://docs.google.com/spreadsheets/d/1aENRlOvGxgvLS4DCiJy6WuhzQCc7LYZAVSqbHHBSzWA/edit?usp=sharing) commonly taken by students at UC Davis. For those of you taking the course in person, these are classes you may end up taking in the future that will put your new R skills to use.

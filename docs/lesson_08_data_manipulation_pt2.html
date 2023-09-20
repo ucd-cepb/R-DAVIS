@@ -13,7 +13,7 @@
 
 <title>Manipulating and analyzing data in the tidyverse, Part 2</title>
 
-<script src="site_libs/header-attrs-2.18/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -36,8 +36,8 @@
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.2.1/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.2.1/css/v4-shims.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="site_libs_extra/academicons-1.8.0/css/academicons.css"/>
 
 <style type="text/css">
@@ -759,10 +759,9 @@ plot:</p>
   filter(!is.na(weight)) %&gt;% 
   group_by(genus, plot_id) %&gt;% 
   summarize(mean_weight = mean(weight)) </code></pre>
-<pre><code>## `summarise()` has grouped
-## output by &#39;genus&#39;. You can
-## override using the `.groups`
-## argument.</code></pre>
+<pre><code>## `summarise()` has grouped output by
+## &#39;genus&#39;. You can override using the
+## `.groups` argument.</code></pre>
 <pre class="r"><code>str(surveys_mz) #let&#39;s take a look at the data</code></pre>
 <pre><code>## gropd_df [196 × 3] (S3: grouped_df/tbl_df/tbl/data.frame)
 ##  $ genus      : chr [1:196] &quot;Baiomys&quot; &quot;Baiomys&quot; &quot;Baiomys&quot; &quot;Baiomys&quot; ...
@@ -816,9 +815,9 @@ head(wide_survey)</code></pre>
 ## 4 Neotoma  156.   169.   158.   190.   149.   120    155.   138.   164.   180.  
 ## 5 Onychom…  27.7   26.9   26.0   27.0   26.6   23.8   25.2   24.6   28.1   25.9 
 ## 6 Perogna…   9.62   6.95   7.51   8.66   8.62   8.09   8.14   9.19   7.82   7.81
-## # … with 14 more variables: `7` &lt;dbl&gt;, `8` &lt;dbl&gt;, `9` &lt;dbl&gt;, `10` &lt;dbl&gt;,
-## #   `11` &lt;dbl&gt;, `12` &lt;dbl&gt;, `13` &lt;dbl&gt;, `14` &lt;dbl&gt;, `15` &lt;dbl&gt;, `16` &lt;dbl&gt;,
-## #   `17` &lt;dbl&gt;, `22` &lt;dbl&gt;, `23` &lt;dbl&gt;, `24` &lt;dbl&gt;</code></pre>
+## # ℹ 14 more variables: `7` &lt;dbl&gt;, `8` &lt;dbl&gt;, `9` &lt;dbl&gt;, `10` &lt;dbl&gt;, `11` &lt;dbl&gt;,
+## #   `12` &lt;dbl&gt;, `13` &lt;dbl&gt;, `14` &lt;dbl&gt;, `15` &lt;dbl&gt;, `16` &lt;dbl&gt;, `17` &lt;dbl&gt;,
+## #   `22` &lt;dbl&gt;, `23` &lt;dbl&gt;, `24` &lt;dbl&gt;</code></pre>
 </div>
 <div id="pivot_longer" class="section level3">
 <h3><code>pivot_longer</code></h3>
@@ -833,9 +832,9 @@ put the column names in</li>
 <li><code>values_to</code> the name of the new column to put the column
 values in</li>
 </ol>
-<div class="figure">
-<img src="img/pivot_longer.JPG" alt="" />
-<p class="caption">pivot_longer figure</p>
+<div class="float">
+<img src="img/pivot_longer.JPG" alt="pivot_longer figure" />
+<div class="figcaption">pivot_longer figure</div>
 </div>
 <p>Let’s pretend that we got sent the dataset we just created
 (<code>wide_survey</code>) and we want to reshape it to be in a long
@@ -907,10 +906,9 @@ q1 &lt;- surveys %&gt;%
   group_by(plot_id, year) %&gt;%
   summarize(n_genera = n_distinct(genus)) %&gt;%
   pivot_wider(names_from = &quot;year&quot;, values_from = &quot;n_genera&quot;)</code></pre>
-<pre><code>## `summarise()` has grouped
-## output by &#39;plot_id&#39;. You can
-## override using the `.groups`
-## argument.</code></pre>
+<pre><code>## `summarise()` has grouped output by
+## &#39;plot_id&#39;. You can override using the
+## `.groups` argument.</code></pre>
 <pre class="r"><code>head(q1)</code></pre>
 <pre><code>## # A tibble: 6 × 27
 ## # Groups:   plot_id [6]
@@ -922,10 +920,10 @@ q1 &lt;- surveys %&gt;%
 ## 4       4      4      4      3      4      5      4      6      3      4      3
 ## 5       5      4      3      2      5      4      6      7      7      3      1
 ## 6       6      3      4      3      4      5      9      9      7      5      6
-## # … with 16 more variables: `1987` &lt;int&gt;, `1988` &lt;int&gt;, `1989` &lt;int&gt;,
-## #   `1990` &lt;int&gt;, `1991` &lt;int&gt;, `1992` &lt;int&gt;, `1993` &lt;int&gt;, `1994` &lt;int&gt;,
-## #   `1995` &lt;int&gt;, `1996` &lt;int&gt;, `1997` &lt;int&gt;, `1998` &lt;int&gt;, `1999` &lt;int&gt;,
-## #   `2000` &lt;int&gt;, `2001` &lt;int&gt;, `2002` &lt;int&gt;</code></pre>
+## # ℹ 16 more variables: `1987` &lt;int&gt;, `1988` &lt;int&gt;, `1989` &lt;int&gt;, `1990` &lt;int&gt;,
+## #   `1991` &lt;int&gt;, `1992` &lt;int&gt;, `1993` &lt;int&gt;, `1994` &lt;int&gt;, `1995` &lt;int&gt;,
+## #   `1996` &lt;int&gt;, `1997` &lt;int&gt;, `1998` &lt;int&gt;, `1999` &lt;int&gt;, `2000` &lt;int&gt;,
+## #   `2001` &lt;int&gt;, `2002` &lt;int&gt;</code></pre>
 <pre class="r"><code>## Answer 2
 q2a &lt;- surveys %&gt;%
   pivot_longer(cols = c(&quot;hindfoot_length&quot;, &quot;weight&quot;), names_to = &quot;measurement_type&quot;, values_to = &quot;value&quot;)
@@ -938,10 +936,9 @@ q2b &lt;- q2a %&gt;%
   group_by(measurement_type, plot_type) %&gt;% 
   summarize(mean_value = mean(value, na.rm=TRUE)) %&gt;% 
   pivot_wider(names_from = &quot;measurement_type&quot;, values_from = &quot;mean_value&quot;)</code></pre>
-<pre><code>## `summarise()` has grouped
-## output by &#39;measurement_type&#39;.
-## You can override using the
-## `.groups` argument.</code></pre>
+<pre><code>## `summarise()` has grouped output by
+## &#39;measurement_type&#39;. You can override
+## using the `.groups` argument.</code></pre>
 <pre class="r"><code>head(q2b)</code></pre>
 <pre><code>## # A tibble: 5 × 3
 ##   plot_type                 hindfoot_length weight

@@ -5,7 +5,7 @@ output:
     toc: false
 ---
 
-Assignments are designed to reinforce the code/lessons covered that week and provide you a chance to practice working with GitHub. Assignments are to be completed in your local project (on your computer) and pushed up to your GitHub repository for instructors to review by the following Wednesday. For example, homework for Week 1 (which is on September 22) should be submitted by September 28. That said, these due dates are largely suggestive as a way to help you prioritize and stay caught up as a group -- if you need, or want, more time, take it. At the end of the quarter, we will simply look over the tasks you have completed in concert with the reflection you submit.
+Assignments are designed to reinforce the code/lessons covered that week and provide you a chance to practice working with GitHub. Assignments are to be completed in your local project (on your computer) and pushed up to your GitHub repository for instructors to review by the following Wednesday. For example, homework for Week 1 (which is on September 28) should be submitted by September 28. That said, these due dates are largely suggestive as a way to help you prioritize and stay caught up as a group -- if you need, or want, more time, take it. Above all, PRIORITIZE LEARNING OVER COMPLETION. We would much rather you finish half the assignment, but really understand it, than submit work that you don't know much about. At the end of the quarter, we will simply look over the tasks you have completed in concert with the reflection you submit.
 
 
 <br>
@@ -14,7 +14,7 @@ Assignments are designed to reinforce the code/lessons covered that week and pro
 
 ### <small>Week 1</small>
 <br>
-Because this class caters to a range of experiences, we would like you to identify how it is you plan on earning credit for this course. Before next week, please complete [this form](https://forms.gle/HHTZJVVtScUrEMLm7) to select and describe your plans.
+Because this class caters to a range of experiences, we would like you to identify how it is you plan on earning credit for this course. Before next week, please complete [this form](https://forms.gle/1Gtxzc6D2AwfKZQz9) to select and describe your plans.
 
 ### <small>Week 2</small>
 
