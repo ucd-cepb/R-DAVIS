@@ -57,7 +57,7 @@ navbar:
     icon: fa-hand-spock-o
     href: contact.html
   - icon: fa-github fa-lg
-    href: https://github.com/gge-ucd/R-DAVIS
+    href: https://github.com/ucd-cepb/R-DAVIS
 output_dir: docs
 output:
   html_document:
