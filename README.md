@@ -2,7 +2,7 @@
 
 **R for Data Analysis &amp; Visualization in Science**
 
-This is the repository for website used to teach the quarter-long graduate seminar course, R-DAVIS. Course content integrates and builds on Data Carpentry Ecology lessons, and is taught as part of the curriculum for students in the Graduate Group in Ecology at the University of California, Davis, USA.
+This is the repository for website used to teach the quarter-long graduate seminar course, R-DAVIS. Course content integrates and builds on Data Carpentry Ecology lessons, and is taught as part of the curriculum for students in the Graduate Groups of Ecology, Environmental Policy & Management, and Transportation Technology & Policy at the University of California, Davis, USA.
 
 
 ## Package Dependencies
@@ -26,7 +26,7 @@ grep -horE 'library\(.*?\)' . | sed 's/library//g; s/[()]//g; s/"//g' | grep -Eo
 
 ## Build Site Locally
 
-The [course website](https://gge-ucd.github.io/R-DAVIS/) can be rebuilt locally by using the "`Build`" tab in RStudio. Assuming the above packages are installed on your machine:
+The [course website](https://ucd-cepb.github.io/R-DAVIS/) can be rebuilt locally by using the "`Build`" tab in RStudio. Assuming the above packages are installed on your machine:
 
  - Open the R-DAVIS project in RStudio. Click on the `Build` tab, and "*More*", select "*Clean All*".
  - Then select `Build Website`. This process make take a few minutes.
@@ -37,5 +37,5 @@ If you only need to rebuild one lesson or one page, you can run `rmarkdown::rend
 
 ## Releases
  
-See the [`Releases`](https://github.com/gge-ucd/R-DAVIS/releases) tab in this repo to find the completed version for a given year. We expect further development of the website for future iterations as the course improves in the future.
+See the [`Releases`](https://github.com/ucd-cepb/R-DAVIS/releases) tab in this repo to find the completed version for a given year. We expect further development of the website for future iterations as the course improves in the future.
 
