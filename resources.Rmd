@@ -74,7 +74,7 @@ This is a list of most of the data sources used in this course.
     + [gapminder.csv](data/gapminder.csv) [country characteristics by year]
 * From [ANGUS: Analyzing High Throughput Sequencing Data](http://angus.readthedocs.io/en/2017/rmarkdown_rnaseq.html)
     + [rnaseq.zip](data/rnaseq.zip) [zipped folder of RNA sequence data]
-* From [Data wRangling for Ecologists](https://gge-ucd.github.io/wRangling-Ecology/)
+* From [Data wRangling for Ecologists](https://ucd-cepb.github.io/wRangling-Ecology/)
     + [2001_mauna_loa_met_data.zip](data/2001_mauna_loa_met_data.zip) [raw meteorological station data from Mauna Loa]
     + [2001 Mauna Loa meteorological station data](data/mauna_loa_met_2001_minute.rda) [tidy format of minute-scale meteorological data from Mauna Loa Observatory]
     + [solinst temp/stage logger data (full)](data/2015_NFA_solinst_08_05.csv) [pressure transducer data logger data from NF American River]

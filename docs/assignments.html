@@ -363,7 +363,7 @@ $(document).ready(function () {
   </a>
 </li>
 <li>
-  <a href="https://github.com/gge-ucd/R-DAVIS">
+  <a href="https://github.com/ucd-cepb/R-DAVIS">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -567,20 +567,20 @@ or not a row’s weight is above average for its species+sex combination
 the homework
 </summary>
 <pre class="r"><code>library(tidyverse)</code></pre>
-<pre><code>## ── Attaching core tidyverse packages ─
+<pre><code>## ── Attaching core tidyverse packages ────────
 ## ✔ dplyr     1.1.2     ✔ readr     2.1.4
 ## ✔ forcats   1.0.0     ✔ stringr   1.5.0
 ## ✔ ggplot2   3.4.2     ✔ tibble    3.2.1
 ## ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
 ## ✔ purrr     1.0.1     
-## ── Conflicts ─────────────────────────
+## ── Conflicts ─────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()
 ## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 <pre class="r"><code>#1
 surveys &lt;- read_csv(&quot;data/portal_data_joined.csv&quot;)</code></pre>
 <pre><code>## Rows: 34786 Columns: 13
-## ── Column specification ──────────────
+## ── Column specification ─────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (6): species_id, sex, genus, species, taxa, plot_type
 ## dbl (7): record_id, month, day, year, plot_id, hindfoot_length, weight
@@ -611,8 +611,8 @@ biggest_critters &lt;- surveys %&gt;%
   group_by(species_id, sex) %&gt;% 
   summarise(max_weight = max(weight))</code></pre>
 <pre><code>## `summarise()` has grouped output by
-## &#39;species_id&#39;. You can override using
-## the `.groups` argument.</code></pre>
+## &#39;species_id&#39;. You can override using the
+## `.groups` argument.</code></pre>
 <pre class="r"><code>biggest_critters %&gt;% arrange(max_weight)</code></pre>
 <pre><code>## # A tibble: 64 × 3
 ## # Groups:   species_id [25]
@@ -787,7 +787,7 @@ the homework
 library(tidyverse)
 surveys &lt;- read_csv(&quot;data/portal_data_joined.csv&quot;)</code></pre>
 <pre><code>## Rows: 34786 Columns: 13
-## ── Column specification ──────────────
+## ── Column specification ─────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (6): species_id, sex, genus, species, taxa, plot_type
 ## dbl (7): record_id, month, day, year, plot_id, hindfoot_length, weight
@@ -800,9 +800,9 @@ surveys &lt;- read_csv(&quot;data/portal_data_joined.csv&quot;)</code></pre>
   summarise(mean_hindfoot = mean(hindfoot_length)) %&gt;% 
   pivot_wider(names_from = plot_type, values_from = mean_hindfoot) %&gt;% 
   arrange(Control)</code></pre>
-<pre><code>## `summarise()` has grouped output by
-## &#39;genus&#39;. You can override using the
-## `.groups` argument.</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;genus&#39;.
+## You can override using the `.groups`
+## argument.</code></pre>
 <pre class="r"><code># 2
 summary(surveys$weight)</code></pre>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
@@ -918,9 +918,9 @@ make sure you have a folder named <code>data</code>, or modify the code
 to the correct folder name.</p>
 <pre class="r"><code>library(tidyverse)
 
-gapminder &lt;- read_csv(&quot;https://gge-ucd.github.io/R-DAVIS/data/gapminder.csv&quot;) #ONLY change the &quot;data&quot; part of this path if necessary</code></pre>
+gapminder &lt;- read_csv(&quot;https://ucd-cepb.github.io/R-DAVIS/data/gapminder.csv&quot;) #ONLY change the &quot;data&quot; part of this path if necessary</code></pre>
 <pre><code>## Rows: 1704 Columns: 6
-## ── Column specification ──────────────
+## ── Column specification ─────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (2): country, continent
 ## dbl (4): year, pop, lifeExp, gdpPercap
@@ -947,8 +947,7 @@ out and see what happens with or without particular elements.</p>
     scale_x_log10() +
     geom_smooth(method = &#39;lm&#39;, color = &#39;black&#39;, linetype = &#39;dashed&#39;) +
     theme_bw()</code></pre>
-<pre><code>## `geom_smooth()` using formula = &#39;y ~
-## x&#39;</code></pre>
+<pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
 <p><img src="assignments_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <ol start="3" style="list-style-type: decimal">
 <li>Create a boxplot that shows the life expectency for Brazil, China,
@@ -972,8 +971,8 @@ gapminder %&gt;%
   geom_point(aes(x = year, y = mean_lifeExp, color = continent))+ #scatter plot
   geom_line(aes(x = year, y = mean_lifeExp, color = continent)) #line plot</code></pre>
 <pre><code>## `summarise()` has grouped output by
-## &#39;continent&#39;. You can override using
-## the `.groups` argument.</code></pre>
+## &#39;continent&#39;. You can override using the
+## `.groups` argument.</code></pre>
 <p><img src="assignments_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <pre class="r"><code>#there are other ways to represent this data and answer this question. Try a facet wrap! Play around with themes and ggplotly!  
 
@@ -987,8 +986,7 @@ ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
     scale_x_log10() +
     geom_smooth(method = &#39;lm&#39;, color = &#39;black&#39;, linetype = &#39;dashed&#39;) +
     theme_bw()</code></pre>
-<pre><code>## `geom_smooth()` using formula = &#39;y ~
-## x&#39;</code></pre>
+<pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
 <p><img src="assignments_files/figure-html/unnamed-chunk-10-2.png" width="672" /></p>
 <pre class="r"><code>#PROBLEM 3: 
 
@@ -1085,7 +1083,7 @@ temperature, and precipitation.</em> Download this dataset <a
 href="data/mauna_loa_met_2001_minute.rda">here</a>. Save it to your
 <code>data/</code> folder. Alternatively, you can read the CSV directly
 from the R-DAVIS Github:
-<code>mloa &lt;- read_csv("https://raw.githubusercontent.com/gge-ucd/R-DAVIS/master/data/mauna_loa_met_2001_minute.csv")</code></p>
+<code>mloa &lt;- read_csv("https://raw.githubusercontent.com/ucd-cepb/R-DAVIS/master/data/mauna_loa_met_2001_minute.csv")</code></p>
 <p>Use the <a href="data/mauna_loa_README.txt">README</a> file
 associated with the Mauna Loa dataset to determine in what time zone the
 data are reported, and how missing values are reported in each column.
@@ -1108,7 +1106,7 @@ Answers:
 <pre class="r"><code>library(tidyverse)
 library(lubridate)
 ## Data import
-mloa &lt;- read_csv(&quot;https://raw.githubusercontent.com/gge-ucd/R-DAVIS/master/data/mauna_loa_met_2001_minute.csv&quot;)
+mloa &lt;- read_csv(&quot;https://raw.githubusercontent.com/ucd-cepb/R-DAVIS/master/data/mauna_loa_met_2001_minute.csv&quot;)
 
 mloa2 = mloa %&gt;%
   # Remove NA&#39;s
@@ -1175,8 +1173,8 @@ Hint: You may have to combine dataframes to answer some questions. Remember our 
 
 
 ```
-## Warning: Removed 1228 rows containing
-## non-finite values (`stat_boxplot()`).
+## Warning: Removed 1228 rows containing non-finite
+## values (`stat_boxplot()`).
 ```
 
 <img src="assignments_files/figure-html/unnamed-chunk-15-1.png" width="672" />

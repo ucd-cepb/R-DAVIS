@@ -439,7 +439,7 @@ div.tocify {
   </a>
 </li>
 <li>
-  <a href="https://github.com/gge-ucd/R-DAVIS">
+  <a href="https://github.com/ucd-cepb/R-DAVIS">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -759,9 +759,9 @@ plot:</p>
   filter(!is.na(weight)) %&gt;% 
   group_by(genus, plot_id) %&gt;% 
   summarize(mean_weight = mean(weight)) </code></pre>
-<pre><code>## `summarise()` has grouped output by
-## &#39;genus&#39;. You can override using the
-## `.groups` argument.</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;genus&#39;.
+## You can override using the `.groups`
+## argument.</code></pre>
 <pre class="r"><code>str(surveys_mz) #let&#39;s take a look at the data</code></pre>
 <pre><code>## gropd_df [196 × 3] (S3: grouped_df/tbl_df/tbl/data.frame)
 ##  $ genus      : chr [1:196] &quot;Baiomys&quot; &quot;Baiomys&quot; &quot;Baiomys&quot; &quot;Baiomys&quot; ...
@@ -937,8 +937,8 @@ q2b &lt;- q2a %&gt;%
   summarize(mean_value = mean(value, na.rm=TRUE)) %&gt;% 
   pivot_wider(names_from = &quot;measurement_type&quot;, values_from = &quot;mean_value&quot;)</code></pre>
 <pre><code>## `summarise()` has grouped output by
-## &#39;measurement_type&#39;. You can override
-## using the `.groups` argument.</code></pre>
+## &#39;measurement_type&#39;. You can override using
+## the `.groups` argument.</code></pre>
 <pre class="r"><code>head(q2b)</code></pre>
 <pre><code>## # A tibble: 5 × 3
 ##   plot_type                 hindfoot_length weight
