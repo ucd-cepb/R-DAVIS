@@ -14,14 +14,13 @@ Check out each week to see what you need to be doing before, during, and after c
 <b>Before class:</b>  
 
 * Catch up on a few videos from Week 1:
-  * [SSH keys](NULL)
+  * [Git, SSH keys, etc.](https://youtu.be/QmWX1TbB2sM)
+  * [Tyler solves problem he hit at end of prior video ^](https://youtu.be/MBCjQ6v1Fek)
 * Videos for Week 2: 
-  * [Intro to R (Part 1)](NULL)
-  * [Intro to R (Part 2)](NULL)
-  * [Filepaths and folder setup](NULL)
-  * [How R thinks about data (Part 1)](NULL)
-  * [How R thinks about data (Part 2)](NULL)
-  * Optional: [Changing RStudio visual defaults](NULL)]
+  * [Intro to R](https://youtu.be/opG_Xcn-t2s)
+  * [Filepaths and folder setup](https://youtu.be/cWb3p7vjpfg)
+  * [How R thinks about data (Part 1)](https://youtu.be/XlBF3oo4yiE)
+  * [How R thinks about data (Part 2)](https://youtu.be/6qU9k125oOc)
 
 <b>After class:</b>  
 

@@ -36,8 +36,8 @@
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-6.2.1/css/all.min.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-6.2.1/css/v4-shims.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="site_libs_extra/academicons-1.8.0/css/academicons.css"/>
 
 <style type="text/css">
@@ -521,17 +521,16 @@ The goal is to visualize delays by carrier. Do (at least) 5 things to
 improve this plot by changing, adding, or subtracting to this plot.</li>
 </ol>
 <pre><code>## Joining with `by = join_by(year, tailnum)`
-## Joining with `by = join_by(year, month, day,
-## origin, hour, time_hour)`
+## Joining with `by = join_by(year, month, day, origin, hour,
+## time_hour)`
 ## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
-<pre><code>## Warning: Removed 112 rows containing non-finite
-## values (`stat_smooth()`).</code></pre>
+<pre><code>## Warning: Removed 112 rows containing non-finite values
+## (`stat_smooth()`).</code></pre>
 <pre><code>## Warning: Removed 112 rows containing missing values
 ## (`geom_point()`).</code></pre>
 <p><img src="final_draft_files/figure-html/unnamed-chunk-1-1.png" width="672" /><img src="final_draft_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
-<pre><code>## `summarise()` has grouped output by &#39;month&#39;.
-## You can override using the `.groups`
-## argument.</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;month&#39;. You can
+## override using the `.groups` argument.</code></pre>
 <pre><code>## Warning: Computation failed in `stat_boxplot()`
 ## Caused by error in `quantile.default()`:
 ## ! missing values and NaN&#39;s not allowed if &#39;na.rm&#39; is FALSE</code></pre>
