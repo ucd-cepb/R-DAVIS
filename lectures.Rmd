@@ -31,12 +31,13 @@ Check out each week to see what you need to be doing before, during, and after c
 <b>Before class:</b>  
 
 * Complete the Week 2 homework in the [Assignments tab](https://ucd-cepb.github.io/R-DAVIS/assignments.html)
+* We'll complete [How R thinks about data (Part 2, Subsetting)](https://youtu.be/6qU9k125oOc) this week since we didn't finish in class week 2.
 * Videos for Week 3: 
-  * [How R thinks about data (Part 3, vector math) - tyler to post](NULL)
-  * [How R thinks about data (Part 4, missing values) - tyler to post](NULL)
+  * How R thinks about data (Part 3, vector math) - tyler to post
+  * How R thinks about data (Part 4, missing values) - tyler to post
   * [How R thinks about data (Part 5a, things other than vectors)](https://youtu.be/plnoV9Ds8nQ)
   * [How R thinks about data (Part 5b, factors)](https://youtu.be/3u0Q2jg9Xeo)
-  * [Reading in and exploring data - tyler to post](NULL)
+  * Reading in and exploring data - tyler to post]
 
 
 <b>After class:</b>  
