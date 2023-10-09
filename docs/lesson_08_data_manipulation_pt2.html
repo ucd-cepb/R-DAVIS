@@ -36,8 +36,8 @@
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.2.1/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.2.1/css/v4-shims.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="site_libs_extra/academicons-1.8.0/css/academicons.css"/>
 
 <style type="text/css">
@@ -759,8 +759,8 @@ plot:</p>
   filter(!is.na(weight)) %&gt;% 
   group_by(genus, plot_id) %&gt;% 
   summarize(mean_weight = mean(weight)) </code></pre>
-<pre><code>## `summarise()` has grouped output by &#39;genus&#39;. You can
-## override using the `.groups` argument.</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;genus&#39;. You can override
+## using the `.groups` argument.</code></pre>
 <pre class="r"><code>str(surveys_mz) #let&#39;s take a look at the data</code></pre>
 <pre><code>## gropd_df [196 × 3] (S3: grouped_df/tbl_df/tbl/data.frame)
 ##  $ genus      : chr [1:196] &quot;Baiomys&quot; &quot;Baiomys&quot; &quot;Baiomys&quot; &quot;Baiomys&quot; ...
@@ -905,8 +905,8 @@ q1 &lt;- surveys %&gt;%
   group_by(plot_id, year) %&gt;%
   summarize(n_genera = n_distinct(genus)) %&gt;%
   pivot_wider(names_from = &quot;year&quot;, values_from = &quot;n_genera&quot;)</code></pre>
-<pre><code>## `summarise()` has grouped output by &#39;plot_id&#39;. You can
-## override using the `.groups` argument.</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;plot_id&#39;. You can override
+## using the `.groups` argument.</code></pre>
 <pre class="r"><code>head(q1)</code></pre>
 <pre><code>## # A tibble: 6 × 27
 ## # Groups:   plot_id [6]
@@ -934,8 +934,8 @@ q2b &lt;- q2a %&gt;%
   group_by(measurement_type, plot_type) %&gt;% 
   summarize(mean_value = mean(value, na.rm=TRUE)) %&gt;% 
   pivot_wider(names_from = &quot;measurement_type&quot;, values_from = &quot;mean_value&quot;)</code></pre>
-<pre><code>## `summarise()` has grouped output by &#39;measurement_type&#39;. You
-## can override using the `.groups` argument.</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;measurement_type&#39;. You can
+## override using the `.groups` argument.</code></pre>
 <pre class="r"><code>head(q2b)</code></pre>
 <pre><code>## # A tibble: 5 × 3
 ##   plot_type                 hindfoot_length weight
