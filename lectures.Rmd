@@ -19,8 +19,8 @@ Check out each week to see what you need to be doing before, during, and after c
 * Videos for Week 2: 
   * [Intro to R](https://youtu.be/opG_Xcn-t2s)
   * [Filepaths and folder setup](https://youtu.be/cWb3p7vjpfg)
-  * [How R thinks about data (Part 1)](https://youtu.be/XlBF3oo4yiE)
-  * [How R thinks about data (Part 2)](https://youtu.be/6qU9k125oOc)
+  * [How R thinks about data (Part 1, Vectors)](https://youtu.be/XlBF3oo4yiE)
+  * [How R thinks about data (Part 2, Subsetting)](https://youtu.be/6qU9k125oOc)
 
 <b>After class:</b>  
 
@@ -32,12 +32,12 @@ Check out each week to see what you need to be doing before, during, and after c
 
 * Complete the Week 2 homework in the [Assignments tab](https://ucd-cepb.github.io/R-DAVIS/assignments.html)
 * Videos for Week 3: 
-  * [How R thinks about data (Part 3, vector math)](NULL)
-  * [How R thinks about data (Part 4, missing values)](NULL)
-  * [How R thinks about data (Part 5, not-vectors)](NULL)
-  * [Spreadsheet best-practices](NULL)
-  * [Reading in and exploring data](NULL)
-  * [Tidyverse](NULL)  
+  * [How R thinks about data (Part 3, vector math) - tyler to post](NULL)
+  * [How R thinks about data (Part 4, missing values) - tyler to post](NULL)
+  * [How R thinks about data (Part 5a, things other than vectors)](https://youtu.be/plnoV9Ds8nQ)
+  * [How R thinks about data (Part 5b, factors)](https://youtu.be/3u0Q2jg9Xeo)
+  * [Reading in and exploring data - tyler to post](NULL)
+
 
 <b>After class:</b>  
 
@@ -49,8 +49,8 @@ Check out each week to see what you need to be doing before, during, and after c
 
 * Complete the Week 3 homework in the [Assignments tab](https://ucd-cepb.github.io/R-DAVIS/assignments.html)
 * Videos for Week 4:  
-  * [Data manipulation Part 1a](NULL)
-  * [Data manipulation Part 1b](NULL)
+  * Data manipulation Part 1a
+  * Data manipulation Part 1b
 
 <!------
   * [Data manipulation Part 1a](https://www.youtube.com/watch?v=f0OCEG-0ExI&list=PL9RGU7mcuUv6hlpNiICK6Q1NYnBsf-RYk&index=2)
@@ -68,8 +68,8 @@ Check out each week to see what you need to be doing before, during, and after c
 
 * Complete the Week 4 homework in the [Assignments tab](https://ucd-cepb.github.io/R-DAVIS/assignments.html)
 * Videos for Week 5:
-  * [Data manipulation Part 2a](NULL)
-  * [Data manipulation Part 2b](NULL)
+  * Data manipulation Part 2a
+  * Data manipulation Part 2b
 
 <!------
   * [Data manipulation Part 2](https://www.youtube.com/watch?v=Y7nhagJCCk4&list=PL9RGU7mcuUv6hlpNiICK6Q1NYnBsf-RYk&index=1&t=824s)
@@ -87,8 +87,8 @@ Check out each week to see what you need to be doing before, during, and after c
 * Complete the Week 5 homework in the [Assignments tab](https://ucd-cepb.github.io/R-DAVIS/assignments.html)
 
 * Videos for Week 6:
-  * [Data visualization Part 1a](NULL)
-  * [Data visualization Part 1b](NULL)
+  * Data visualization Part 1a
+  * Data visualization Part 1b
 
 <b>After class:</b>  
 
@@ -100,8 +100,8 @@ Check out each week to see what you need to be doing before, during, and after c
 
 * Complete the Week 6 homework in the [Assignments tab](https://ucd-cepb.github.io/R-DAVIS/assignments.html)
 * Videos for Week 7:
-  * [Data visualization Part 2a](NULL)
-  * [Data visualization Part 2b](NULL)
+  * Data visualization Part 2a
+  * Data visualization Part 2b
 
 
 <!------
@@ -120,8 +120,8 @@ Check out each week to see what you need to be doing before, during, and after c
 
 * Complete the Week 7 homework in the [Assignments tab](https://ucd-cepb.github.io/R-DAVIS/assignments.html)
 * Videos for Week 8:
-  * [Dates with Lubridate](NULL)
-  * [Function-writing](NULL)
+  * Dates with Lubridate
+  * Function-writing
   * Iteration (bonus video to be posted soon, no need to watch before)
 
 <!------  
@@ -141,8 +141,8 @@ Check out each week to see what you need to be doing before, during, and after c
 
 * Complete the Week 8 homework in the [Assignments tab](https://ucd-cepb.github.io/R-DAVIS/assignments.html)
 * Videos for Week 9:
-  * [For loops](NULL)
-  * [Map functions](NULL)
+  * For loops
+  * Map functions
 
 ### Finals Week
 
