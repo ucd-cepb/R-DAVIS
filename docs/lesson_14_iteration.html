@@ -667,12 +667,12 @@ different member of the family.</p>
 ##         vs         am       gear       carb 
 ##   0.437500   0.406250   3.687500   2.812500</code></pre>
 <pre class="r"><code>mtcars %&gt;% map_chr(mean) # gives a character vector</code></pre>
-<pre><code>## Warning: Automatic coercion from double to character was deprecated
-## in purrr 1.0.0.
-## ℹ Please use an explicit call to `as.character()` within
-##   `map_chr()` instead.
-## Call `lifecycle::last_lifecycle_warnings()` to see where
-## this warning was generated.</code></pre>
+<pre><code>## Warning: Automatic coercion from double to character was
+## deprecated in purrr 1.0.0.
+## ℹ Please use an explicit call to `as.character()`
+##   within `map_chr()` instead.
+## Call `lifecycle::last_lifecycle_warnings()` to see
+## where this warning was generated.</code></pre>
 <pre><code>##          mpg          cyl         disp           hp         drat           wt 
 ##  &quot;20.090625&quot;   &quot;6.187500&quot; &quot;230.721875&quot; &quot;146.687500&quot;   &quot;3.596563&quot;   &quot;3.217250&quot; 
 ##         qsec           vs           am         gear         carb 
