@@ -50,14 +50,10 @@ Check out each week to see what you need to be doing before, during, and after c
 
 * Complete the Week 3 homework in the [Assignments tab](https://ucd-cepb.github.io/R-DAVIS/assignments.html)
 * Videos for Week 4:  
-  * Data manipulation Part 1a
-  * Data manipulation Part 1b
-
-<!------
-  * [Data manipulation Part 1a](https://www.youtube.com/watch?v=f0OCEG-0ExI&list=PL9RGU7mcuUv6hlpNiICK6Q1NYnBsf-RYk&index=2)
-  * [Data manipulation Part 1b](https://www.youtube.com/watch?v=h6wgu_3Jp1c&list=PL9RGU7mcuUv6hlpNiICK6Q1NYnBsf-RYk&index=1)
-  * In case you missed it last week: [Extra about package installation](https://www.youtube.com/watch?v=LYlto9UAGAA&list=PL9RGU7mcuUv6hlpNiICK6Q1NYnBsf-RYk&index=3)  
-  ------> 
+  * [Spreadsheet best practices](https://youtu.be/ZpiSc71juf4)
+  * [Welcome to the tidyverse](https://youtu.be/JOyZBx5JME0)
+  * [Data manipulation Part 1a](https://youtu.be/yjOdk-FYZLw)
+  * [Data manipulation Part 1b](https://youtu.be/PtiSeJEZ7Jc)
 
 <b>After class:</b>  
 

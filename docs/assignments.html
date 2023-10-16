@@ -13,7 +13,7 @@
 
 <title>Coding Practice</title>
 
-<script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -33,8 +33,8 @@
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-6.2.1/css/all.min.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-6.2.1/css/v4-shims.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="site_libs_extra/academicons-1.8.0/css/academicons.css"/>
 
 <style type="text/css">
@@ -567,20 +567,20 @@ or not a row’s weight is above average for its species+sex combination
 the homework
 </summary>
 <pre class="r"><code>library(tidyverse)</code></pre>
-<pre><code>## ── Attaching core tidyverse packages ──────────────
+<pre><code>## ── Attaching core tidyverse packages ─────────────
 ## ✔ dplyr     1.1.2     ✔ readr     2.1.4
 ## ✔ forcats   1.0.0     ✔ stringr   1.5.0
 ## ✔ ggplot2   3.4.2     ✔ tibble    3.2.1
 ## ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
 ## ✔ purrr     1.0.2     
-## ── Conflicts ───────────── tidyverse_conflicts() ──
+## ── Conflicts ──────────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()
 ## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 <pre class="r"><code>#1
 surveys &lt;- read_csv(&quot;data/portal_data_joined.csv&quot;)</code></pre>
 <pre><code>## Rows: 34786 Columns: 13
-## ── Column specification ───────────────────────────
+## ── Column specification ──────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (6): species_id, sex, genus, species, taxa, plot_type
 ## dbl (7): record_id, month, day, year, plot_id, hindfoot_length, weight
@@ -786,7 +786,7 @@ the homework
 library(tidyverse)
 surveys &lt;- read_csv(&quot;data/portal_data_joined.csv&quot;)</code></pre>
 <pre><code>## Rows: 34786 Columns: 13
-## ── Column specification ───────────────────────────
+## ── Column specification ──────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (6): species_id, sex, genus, species, taxa, plot_type
 ## dbl (7): record_id, month, day, year, plot_id, hindfoot_length, weight
@@ -918,7 +918,7 @@ to the correct folder name.</p>
 
 gapminder &lt;- read_csv(&quot;https://ucd-cepb.github.io/R-DAVIS/data/gapminder.csv&quot;) #ONLY change the &quot;data&quot; part of this path if necessary</code></pre>
 <pre><code>## Rows: 1704 Columns: 6
-## ── Column specification ───────────────────────────
+## ── Column specification ──────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (2): country, continent
 ## dbl (4): year, pop, lifeExp, gdpPercap
