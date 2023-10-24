@@ -13,7 +13,7 @@
 
 <title>Coding Practice</title>
 
-<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -33,8 +33,8 @@
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.2.1/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.2.1/css/v4-shims.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="site_libs_extra/academicons-1.8.0/css/academicons.css"/>
 
 <style type="text/css">
@@ -567,20 +567,20 @@ or not a row’s weight is above average for its species+sex combination
 the homework
 </summary>
 <pre class="r"><code>library(tidyverse)</code></pre>
-<pre><code>## ── Attaching core tidyverse packages ─────────────
+<pre><code>## ── Attaching core tidyverse pa
 ## ✔ dplyr     1.1.2     ✔ readr     2.1.4
 ## ✔ forcats   1.0.0     ✔ stringr   1.5.0
 ## ✔ ggplot2   3.4.2     ✔ tibble    3.2.1
 ## ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
 ## ✔ purrr     1.0.2     
-## ── Conflicts ──────────── tidyverse_conflicts() ──
+## ── Conflicts ─────────────────
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()
 ## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 <pre class="r"><code>#1
 surveys &lt;- read_csv(&quot;data/portal_data_joined.csv&quot;)</code></pre>
 <pre><code>## Rows: 34786 Columns: 13
-## ── Column specification ──────────────────────────
+## ── Column specification ──────
 ## Delimiter: &quot;,&quot;
 ## chr (6): species_id, sex, genus, species, taxa, plot_type
 ## dbl (7): record_id, month, day, year, plot_id, hindfoot_length, weight
@@ -610,8 +610,10 @@ biggest_critters &lt;- surveys %&gt;%
   filter(!is.na(weight)) %&gt;% 
   group_by(species_id, sex) %&gt;% 
   summarise(max_weight = max(weight))</code></pre>
-<pre><code>## `summarise()` has grouped output by &#39;species_id&#39;.
-## You can override using the `.groups` argument.</code></pre>
+<pre><code>## `summarise()` has grouped
+## output by &#39;species_id&#39;. You
+## can override using the
+## `.groups` argument.</code></pre>
 <pre class="r"><code>biggest_critters %&gt;% arrange(max_weight)</code></pre>
 <pre><code>## # A tibble: 64 × 3
 ## # Groups:   species_id [25]
@@ -711,7 +713,8 @@ surveys_avg_weight &lt;- surveys %&gt;%
 
 surveys_avg_weight</code></pre>
 <pre><code>## # A tibble: 32,283 × 4
-## # Groups:   species_id, sex [64]
+## # Groups:   species_id, sex
+## #   [64]
 ##    species_id sex   weight avg_weight
 ##    &lt;chr&gt;      &lt;chr&gt;  &lt;dbl&gt;      &lt;dbl&gt;
 ##  1 NL         M        218       166.
@@ -731,7 +734,8 @@ surveys_avg_weight &lt;- surveys_avg_weight %&gt;%
 
 surveys_avg_weight</code></pre>
 <pre><code>## # A tibble: 32,283 × 5
-## # Groups:   species_id, sex [64]
+## # Groups:   species_id, sex
+## #   [64]
 ##    species_id sex   weight avg_weight above_average
 ##    &lt;chr&gt;      &lt;chr&gt;  &lt;dbl&gt;      &lt;dbl&gt; &lt;lgl&gt;        
 ##  1 NL         M        218       166. TRUE         
@@ -786,7 +790,7 @@ the homework
 library(tidyverse)
 surveys &lt;- read_csv(&quot;data/portal_data_joined.csv&quot;)</code></pre>
 <pre><code>## Rows: 34786 Columns: 13
-## ── Column specification ──────────────────────────
+## ── Column specification ──────
 ## Delimiter: &quot;,&quot;
 ## chr (6): species_id, sex, genus, species, taxa, plot_type
 ## dbl (7): record_id, month, day, year, plot_id, hindfoot_length, weight
@@ -799,8 +803,10 @@ surveys &lt;- read_csv(&quot;data/portal_data_joined.csv&quot;)</code></pre>
   summarise(mean_hindfoot = mean(hindfoot_length)) %&gt;% 
   pivot_wider(names_from = plot_type, values_from = mean_hindfoot) %&gt;% 
   arrange(Control)</code></pre>
-<pre><code>## `summarise()` has grouped output by &#39;genus&#39;. You
-## can override using the `.groups` argument.</code></pre>
+<pre><code>## `summarise()` has grouped
+## output by &#39;genus&#39;. You can
+## override using the `.groups`
+## argument.</code></pre>
 <pre class="r"><code># 2
 summary(surveys$weight)</code></pre>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
@@ -918,7 +924,7 @@ to the correct folder name.</p>
 
 gapminder &lt;- read_csv(&quot;https://ucd-cepb.github.io/R-DAVIS/data/gapminder.csv&quot;) #ONLY change the &quot;data&quot; part of this path if necessary</code></pre>
 <pre><code>## Rows: 1704 Columns: 6
-## ── Column specification ──────────────────────────
+## ── Column specification ──────
 ## Delimiter: &quot;,&quot;
 ## chr (2): country, continent
 ## dbl (4): year, pop, lifeExp, gdpPercap
@@ -945,7 +951,8 @@ out and see what happens with or without particular elements.</p>
     scale_x_log10() +
     geom_smooth(method = &#39;lm&#39;, color = &#39;black&#39;, linetype = &#39;dashed&#39;) +
     theme_bw()</code></pre>
-<pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
+<pre><code>## `geom_smooth()` using formula
+## = &#39;y ~ x&#39;</code></pre>
 <p><img src="assignments_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <ol start="3" style="list-style-type: decimal">
 <li>Create a boxplot that shows the life expectency for Brazil, China,
@@ -968,8 +975,10 @@ gapminder %&gt;%
   ggplot()+
   geom_point(aes(x = year, y = mean_lifeExp, color = continent))+ #scatter plot
   geom_line(aes(x = year, y = mean_lifeExp, color = continent)) #line plot</code></pre>
-<pre><code>## `summarise()` has grouped output by &#39;continent&#39;.
-## You can override using the `.groups` argument.</code></pre>
+<pre><code>## `summarise()` has grouped
+## output by &#39;continent&#39;. You
+## can override using the
+## `.groups` argument.</code></pre>
 <p><img src="assignments_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <pre class="r"><code>#there are other ways to represent this data and answer this question. Try a facet wrap! Play around with themes and ggplotly!  
 
@@ -983,7 +992,8 @@ ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
     scale_x_log10() +
     geom_smooth(method = &#39;lm&#39;, color = &#39;black&#39;, linetype = &#39;dashed&#39;) +
     theme_bw()</code></pre>
-<pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
+<pre><code>## `geom_smooth()` using formula
+## = &#39;y ~ x&#39;</code></pre>
 <p><img src="assignments_files/figure-html/unnamed-chunk-10-2.png" width="672" /></p>
 <pre class="r"><code>#PROBLEM 3: 
 
@@ -1170,7 +1180,8 @@ Hint: You may have to combine dataframes to answer some questions. Remember our 
 
 
 ```
-## Warning: Removed 1228 rows containing non-finite values
+## Warning: Removed 1228 rows containing
+## non-finite values
 ## (`stat_boxplot()`).
 ```
 
