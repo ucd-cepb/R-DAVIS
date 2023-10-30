@@ -85,8 +85,8 @@ Check out each week to see what you need to be doing before, during, and after c
 * Complete the Week 5 homework in the [Assignments tab](https://ucd-cepb.github.io/R-DAVIS/assignments.html)
 
 * Videos for Week 6:
-  * Data visualization Part 1a
-  * Data visualization Part 1b
+  * [Data visualization Part 1a](https://youtu.be/BO-9aFrUcrA)
+  * [Data visualization Part 1b](https://youtu.be/OyWtWbZcC6A)
 
 <b>After class:</b>  
 
