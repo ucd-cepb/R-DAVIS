@@ -118,9 +118,9 @@ Check out each week to see what you need to be doing before, during, and after c
 
 * Complete the Week 7 homework in the [Assignments tab](https://ucd-cepb.github.io/R-DAVIS/assignments.html)
 * Videos for Week 8:
-  * Dates with Lubridate
-  * Function-writing
-  * Iteration (bonus video to be posted soon, no need to watch before)
+  * [Dates with Lubridate](https://youtu.be/AI56n5J76SQ)
+  * [Function-writing](https://youtu.be/5gAig6AQ4S0)
+
 
 <!------  
   * [Lubridate](https://www.youtube.com/watch?v=CVgeZf8Av0I&list=PL9RGU7mcuUv6hlpNiICK6Q1NYnBsf-RYk&index=2)
