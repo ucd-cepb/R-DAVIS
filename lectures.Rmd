@@ -141,7 +141,7 @@ Check out each week to see what you need to be doing before, during, and after c
 * Complete the Week 8 homework in the [Assignments tab](https://ucd-cepb.github.io/R-DAVIS/assignments.html)
 * Videos for Week 9:
   * [For loops and apply functions](https://youtu.be/Mfzg98VsSuk)
-  * [Map functions (2021)](https://www.youtube.com/watch?v=DVaACfvnFJs&list=PL9RGU7mcuUv6hlpNiICK6Q1NYnBsf-RYk&index=2)
+  * [Map functions 2021](https://www.youtube.com/watch?v=DVaACfvnFJs&list=PL9RGU7mcuUv6hlpNiICK6Q1NYnBsf-RYk&index=2)
 
 ### Finals Week
 
