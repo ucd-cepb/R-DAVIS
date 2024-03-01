@@ -1,0 +1,141 @@
+---
+title: "INLA? INLA!"
+---
+
+```{r setup, echo=FALSE, purl=FALSE, message=F, results=F}
+library(lme4)
+### sometimes the download is slow ##3
+options(timeout = max(1000, getOption("timeout")))
+### install if not already installed
+if(require(INLA)==FALSE){
+  install.packages("INLA",repos=c(getOption("repos"),INLA="https://inla.r-inla-download.org/R/testing"), dep=TRUE,verbose = T)
+}
+require(INLA)
+
+```
+
+<br>
+<div class = "blue">
+## Learning objectives
+
+* Why is INLA?
+* What is INLA?
+* Worked example
+* More examples
+
+Basically, I want you to be aware this is a thing and have a vague sense that this could work for your modeling task in the future
+
+## Why is INLA?
+
+We often focus on specific types of models: spatial models, time series models, hierarchical models, graphical models, GAMs (?)... But fundamentally, all of these types can be understood as specific instances of "richly parameterized linear models" (see Hodges 2013) (i.e., it's all random effects). These models don't have to be Bayesian, but often are. There are theoretical benefits, but practically Bayesian models are useful for setting up complex parameterizations.
+
+Most Bayesian estimation uses Markov-chain Monte Carlo (MCMC) sampling --> sample from a high dimensional probability distribution, keep sampling until you get results with desireable properties (like maximum likelihood of parameters given the data). MCMC estimation works well, but it's slooowwww.... and if you've ever played with JAGS or Stan or similar tools, it's not that easy to get rolling. 
+
+Integrated nested Laplace approximation (INLA) is an alternative approach --> "approximate Bayesian inference", i.e., integration to derive results rather than a sampling method. What you need to know is in most applications it's faster than MCMC and it's about as accurate (more or less depending on context). Also **INLA IS BUILT WITH REASONABLE DEFAULT PRIORS**. In other words, you can plug in priors if you want, but if you don't want, the thing just works.
+
+## What is INLA?
+
+Nobody really knows _why_ INLA works, but we do know _how_ INLA works: using something called Gaussian Markov random fields (GMRFs). The key word here is _Markov_; the idea of a GMRF is that values are independent of one another conditional on their neighbors. You are likely familiar with this sort of thing in a spatial model, with areal or point process data. But GMRFs are also good for breaking complex dependency structures into statistically tractable chunks, so can be used to regression models more generally. 
+
+At some point, we should have a convo about GMRFs, sparse matrices, Laplace approximation, and the nitty gritty of how INLA works. But for now, let's just trust that it does.
+
+* Before proceeding, a few definitions are helpful (you'll see these in INLA tutorials and papers):
+  * _prior [distribution]_: quantified uncertainty about a parameter before you model any data
+  * _posterior [distribution]_: quantified uncertainty about a parameter based on prior distribution + probability distribution of new data.
+  * _precision matrix_: the inverse of a covariate matrix (i.e., 1 / covariate matrix)
+  * _hyperparameter_: a parameter of a prior distribution
+
+# Worked Example
+
+Let's start with a simple example: A linear regression $ y_i = \alpha + \beta x_i + \epsilon_i $ where $y_i$ is the outcome for observation _i_, $\beta$ is a linear parameter estimated for covariate _x_ and $\epsilon$ is the error term.
+
+```{r}
+## simulate these data for expediency ##
+n = 1000
+y = rnorm(n)
+x = rnorm(n)
+test_data = data.frame(y = y, x = x)
+library(INLA)
+### Gaussian is how statistical elitists say "normal distribution", i.e., this is a basic linear model
+mod = inla(formula = y ~ x,data = test_data,family = 'Gaussian')
+### comparison
+mod_ols = lm(y ~ x,data = test_data)
+
+### summary.fixed is where the posteriors of the fixed effects live
+estimates = mod$summary.fixed
+
+# pretty close!
+data.frame(inla = estimates$mean,OLS = mod_ols$coefficients)
+```
+
+And in this case, the confidence interval from the lm() function and the credible interval from the INLA function end up roughly the same too (this changes as you play with priors and build out bigger and badder models) 
+```{r}
+cbind(c('confidence','credible'),round(rbind(
+confint(mod_ols)[2,],
+cbind(estimates$`0.025quant`,estimates$`0.975quant`)[2,]),6))
+```
+
+# What else can I do?
+
+Basically, the bounds of what is possible in INLA are defined by two things:
+
+## Likelihood families
+
+INLA has _a lot_ of built in likelihoods. You can view by calling:
+
+```{r}
+inla.list.models('likelihood')
+```
+
+What's missing? Basically the only thing not in here is the multinomial likelihood... but you can use the [Poisson trick](https://www.r-inla.org/faq#h.u3cjqz72sb5o)... perhaps a convo for another day. 
+
+## Latent models
+
+What is a latent model? Some sort of underlying structure you impose on the data that turns it from just a bag of $y_i$ values into some sort of arrangement of $y_i$ values. For instance, you can include what we traditionally call a "random effect" for groups of data by adding `+ f(group_indicator, model = 'iid')` to your formula. If you view the help doc for the _iid_ model by calling `inla.doc("iid")`, a PDF will pop on on your computer that shoes how the term works, what the other options are (e.g., do you want to specify a prior, constrain the the estimate, copy the parameter from another term, etc.). There are a lot of latent models, which you can list by calling `inla.list.models('latent')`. Common examples include the _iid_, _ar_ (autoregressive) and _rw1_ / _rw2_ (random walk) models, and spatial terms like the _Besag_ or _BYM_ approaches for areal spatial data.
+
+
+## Other features
+
+The likelihood and latent model functionality is really all you need to get started. Once you get going, you can also specify different types of priors, create groupings or copies of latent models (e.g., like if you wanted to specify a random walk model with a separate random walk for subgroups of observations).
+
+# How do I actually do this?
+
+The best place to start is with someone else's worked example. Figuring out all the syntax and settings is hard. There are great tutorials and worked examples on the primary [INLA webpage](https://www.r-inla.org/examples-tutorials) and Virgil Gomez-Rubio as an [open source bitbucket version](https://becarioprecario.bitbucket.io/inla-gitbook/) of his INLA textbook that has tons of code and examples.
+
+## Example 1: BYM model
+
+## Example 2: Joint likelihood (hurdle) model
+
+
+# Tips, tricks, and questions
+
+## The SD of my posterior is huge and the mean is basically zero??
+
+A few possibilities: (1) make sure you don't have a bunch of NA values; (2) make sure the variable isn't completely correlated with another variable; (3) check the scale of model inputs. It could be that you just have bad data and the model is legitimately like giving you an emoji shrug. But usually it's indicative of a problem.
+
+## Should I scale and center things?
+
+In general, yes. Hierarchical Bayesian models work better when inputs are of similar magnitude and inputs are mean-centered (so "0" values are "average"). For minor differences, this won't matter, but if you have some variables measured between 0 and 1 and others measured between $0 and $100M, think about scaling and logging and similar things to make more commensurate.
+
+## What's with all the control.[something] function features?
+
+INLA works out of the box _or_ lets you customize everything. control.[thing] structured lists are how you do this. INLA has several control.[thing]s. If you are lost, you can always use helpful, like `?control.fixed`.
+  * `control.fixed`: settings for priors and desired outputs for unmodeled ("fixed") effects in model (i.e., basic regression terms). 
+  * `control.random`: similar to `control.fixed`, but for the latent (random effects) models like `rw1` or `iid` terms.
+  * `control.compute`: controls calculations and model returns. For instance, let's say you wanted to return DIC and WAIC values to compare model GOFs. You would call `control.compute = list(waic = T,dic = T)`. You can also greatly reduce the size of the returned model object by _reducing_ returns, such as by calling `control.compute = list(return.marginals = F)` if you only want basic posterior estimates and don't need more detail about the marginal estimations.
+  * `control.family`: How you adjust settings for the likelihood family, including priors, the link function, etc.
+  * there are lots of other `control.[thing]` settings, which for the most part you don't need to mess with. Settings I have adjusted before include `control.inla` for altering how the estimation proceeds (like heating up a model) and `control.hazard` for hazard functions and survival models.
+
+## what's with all the `hyper = X` things I see in the example code?
+
+This is our old friend the _hyperparameter_.... basically, `hyper` is one way that INLA let's you specify priors using the `hyper` setting. So you might see it w/in a latent `iid` term `f(group,model = 'iid', hyper = X)` or within a `control.[thing]` setting.
+  
+## how do I export model results? 
+
+INLA returns a giant list object. You basically need to navigate hte list to get what you want. `mod$summary.fixed` is how you break into the linear terms, `mod$summary.random` starts you towards the modeled effects, 
+
+
+## tell me some cool stuff I can do!?
+
+Yes! So many things! A few things I have done that I've found valuable: (1) it is easy to fit a model, get posteriors, and use those estimates as priors for a subsequent model (e.g., if you fit a big model with less data and then a model with more detailed data on a subset of observations); (2) joint likelihood/hurdle models: basically, you can dream up any Y matrix structure and make it happen; (3) INLA has features, beyond the scope here, that let you layer on data that aren't directly linked. So like, if you have point process observations (e.g., cancer) and want to regress that on features like air quality data that is measured at _other places_, you can build a graphical structure that relates the two. In tutorials if you see references to things like `inla.stack`, that's where the magic is happening to turn different data parts (e.g., a flat file of regression inputs and a spatial array of other values) into the necessary model input. 
+
