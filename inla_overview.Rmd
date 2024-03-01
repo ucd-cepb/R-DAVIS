@@ -1,0 +1,87 @@
+---
+title: "INLA? INLA^*$# INLA!"
+---
+
+```{r setup, echo=FALSE, purl=FALSE, message=F, results=F}
+library(lme4)
+### sometimes the download is slow ##3
+options(timeout = max(1000, getOption("timeout")))
+### install if not already installed
+if(require(INLA)==FALSE){
+  install.packages("INLA",repos=c(getOption("repos"),INLA="https://inla.r-inla-download.org/R/testing"), dep=TRUE,verbose = T)
+}
+require(INLA)
+
+```
+
+<br>
+<div class = "blue">
+## Learning objectives
+
+* Why is INLA?
+* What is INLA?
+* Worked example
+* More examples
+
+Basically, I want you to be aware this is a thing and have a vague sense that this could work for your modeling task in the future
+
+## Why is INLA?
+
+We often focus on specific types of models: spatial models, time series models, hierarchical models, graphical models, GAMs (?)... But fundamentally, all of these types can be understood as specific instances of "richly parameterized linear models" (see Hodges 2013) (i.e., it's all random effects). These models don't have to be Bayesian, but often are. There are theoretical benefits, but practically Bayesian models are useful for setting up complex parameterizations.
+
+Most Bayesian estimation uses Markov-chain Monte Carlo (MCMC) sampling --> sample from a high dimensional probability distribution, keep sampling until you get results with desireable properties (like maximum likelihood of parameters given the data). MCMC estimation works well, but it's slooowwww.... and if you've ever played with JAGS or Stan or similar tools, it's not that easy to get rolling. 
+
+Integrated nested Laplace approximation (INLA) is an alternative approach --> "approximate Bayesian inference", i.e., integration to derive results rather than a sampling method. What you need to know is in most applications it's faster than MCMC and it's about as accurate (more or less depending on context). 
+
+## What is INLA?
+
+Nobody really knows _why_ INLA works, but we do know _how_ INLA works: using something called Gaussian Markov random fields (GMRFs). The key word here is _Markov_; the idea of a GMRF is that values are independent of one another conditional on their neighbors. You are likely familiar with this sort of thing in a spatial model, with areal or point process data. But GMRFs are also good for breaking complex dependency structures into statistically tractable chunks, so can be used to regression models more generally. 
+
+* Before proceeding, a few definitions are helpful (you'll see these in INLA tutorials and papers):
+  * _prior [distribution]_: quantified uncertainty about a parameter before you model any data
+  * _posterior [distribution]_: quantified uncertainty about a parameter based on prior distribution + probability distribution of new data.
+  * _precision matrix_: the inverse of a covariate matrix (i.e., 1 / covariate matrix)
+  * _hyperparameter_: a parameter of a prior distribution
+
+Ok, so think about a basic linear regression: $ y_i = \alpha + \beta x_i + \epsilon $. INLA takes the set of linear predictors (n = x,y pairs) + the \alpha, and the \beta parameters and makes a vector that is n + 2 items long. 
+
+
+# Worked Example
+
+Let's start with a simple example: A linear regression $ y_i = \alpha + \beta x_i + \epsilon_i $ where $y_i$ is the outcome for observation _i_, $\beta$ is a linear parameter estimated for covariate _x_ and $\epsilon$ is the error term.
+
+```{r}
+## simulate these data for expediency ##
+n = 1000
+y = rnorm(n)
+x = rnorm(n)
+test_data = data.frame(y = y, x = x)
+library(INLA)
+### Gaussian is how statistical elitists say "normal distribution", i.e., this is a basic linear model
+mod = inla(formula = y ~ x,data = test_data,family = 'Gaussian')
+### comparison
+mod_ols = lm(y ~ x,data = test_data)
+
+### summary.fixed is where the posteriors of the fixed effects live
+estimates = mod$summary.fixed
+
+# pretty close!
+data.frame(inla = estimates$mean,OLS = mod_ols$coefficients)
+```
+
+And in this case, the confidence interval from the lm() function and the credible interval from the INLA function end up roughly the same too (this changes as you play with priors and build out bigger and badder models) 
+```{r}
+cbind(c('confidence','credible'),round(rbind(
+confint(mod_ols)[2,],
+cbind(estimates$`0.025quant`,estimates$`0.975quant`)[2,]),6))
+```
+
+
+# How do I 
+
+1) The sd’s are really large! Does this mean I’m doing something wrong?
+2) What are all the parts of the function call, especially control.fixed, control.predictor, and the  “hyper” part? In the pdf examples, “hyper” was specified within control.predictor, but in the example code you wrote for me, “hyper” is in the f(farmer_id… part.
+3) This is related, but how do you do partial pooling, and is that different from a random effect? (Like, what are the various ways to account for a group-level effect on a cluster of data points?) I know that’s kind of basic stats stuff, but I get confused when different sources use different language for the same thing, or use the same language to mean different things
+4) Are you supposed to specify priors in INLA? If so, how do you do that?
+5) How do you export the model results? I saw the example you used imports model$summary.random — what does that mean, and what do the other options do? (Fixed, Lincomb, etc)
+6) Another basic stats thing so we don't have to take lab time for this, but how do you choose between poisson and binomial?
