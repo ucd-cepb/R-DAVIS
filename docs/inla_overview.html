@@ -553,9 +553,9 @@ estimates = mod$summary.fixed
 
 # pretty close!
 data.frame(inla = estimates$mean,OLS = mod_ols$coefficients)</code></pre>
-<pre><code>##                      inla           OLS
-## (Intercept) -2.375223e-02 -2.375223e-02
-## x            2.422094e-05  2.422096e-05</code></pre>
+<pre><code>##                   inla        OLS
+## (Intercept) 0.03269991 0.03269991
+## x           0.01454682 0.01454684</code></pre>
 <p>And in this case, the confidence interval from the lm() function and
 the credible interval from the INLA function end up roughly the same too
 (this changes as you play with priors and build out bigger and badder
@@ -564,8 +564,8 @@ models)</p>
 confint(mod_ols)[2,],
 cbind(estimates$`0.025quant`,estimates$`0.975quant`)[2,]),6))</code></pre>
 <pre><code>##                   2.5 %       97.5 %    
-## [1,] &quot;confidence&quot; &quot;-0.059472&quot; &quot;0.05952&quot; 
-## [2,] &quot;credible&quot;   &quot;-0.059428&quot; &quot;0.059476&quot;</code></pre>
+## [1,] &quot;confidence&quot; &quot;-0.048901&quot; &quot;0.077994&quot;
+## [2,] &quot;credible&quot;   &quot;-0.048856&quot; &quot;0.07795&quot;</code></pre>
 </div>
 <div id="what-else-can-i-do" class="section level1">
 <h1>What else can I do?</h1>
