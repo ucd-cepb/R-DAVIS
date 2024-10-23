@@ -259,8 +259,38 @@ This is the midterm exam for R-DAVIS Fall 2024. THE MIDTERM IS NOT GRADED. This 
 
 BACKGROUND: The pandemic spurred Tyler to get back into running semi-seriously. That went pretty well until he hurt his Achilles tendon. The sports med doctors at UC Davis filmed and analyzed his running. The doctors said Tyler was getting old... and that he was over-striding and putting too much pressure on his Achilles when landing. So in 2024, Tyler has been practicing running differently. The doctors and trainers are having Tyler increase his cadence (strides per minute) while running, with the idea being that fast, short strides place less stress on the lower body. For this exam, you are going to read in data that Tyler has exported from his Garmin running watch and perform a descriptive analysis to assess how successful this effort has been.
 
-TASK DESCRIPTION: Read in the file at FILE NAME HERE. The file is a .csv file where each row is a "lap" from an activity Tyler tracked with his watch. Filter out any non-running activities. Next, Tyler often has to take walk breaks between laps right now because trying to change how you've run for 25 years is hard. You can assume that any lap with a pace above 10-minute-mile-pace is walking, so remove those laps. You can also assume that any lap of one minute or less, and any lap that is faster than 5-minute-mile-pace is not relevant, so remove those laps too. Create a new categorical variable, pace, that categorizes laps by pace: "fast" (< 6:00-per-mile), "medium" (6:00 to 8:00), and "slow" ( > 8:00). Create a second categorical variable, `form` that distinguishes between laps run in the year 2024 ("new", as Tyler started his rehab in January 2024) and all prior years ("old"). Identify the average steps per minute for laps by form and pace, and generate a table showing these values with each year as a row and paces as columns. Make sure that `slow` speed is the second column, `medium` speed is the third column, and `fast` speed is the fourth column (hint: think about what the `select()` function does)
+TASK DESCRIPTION: Read in the file tyler_activity_laps_10-24.csv from the class github page. This file is at url `https://raw.githubusercontent.com/ucd-cepb/R-DAVIS/refs/heads/master/data/tyler_activity_laps_10-24.csv`, so you can code that url value as a string object in R and call read_csv() on that object. The file is a .csv file where each row is a "lap" from an activity Tyler tracked with his watch. Filter out any non-running activities. Next, Tyler often has to take walk breaks between laps right now because trying to change how you've run for 25 years is hard. You can assume that any lap with a pace above 10-minute-mile-pace is walking, so remove those laps. You can also assume that any lap of one minute or less, and any lap that is faster than 5-minute-mile-pace is not relevant, so remove those laps too. Create a new categorical variable, pace, that categorizes laps by pace: "fast" (< 6:00-per-mile), "medium" (6:00 to 8:00), and "slow" ( > 8:00). Create a second categorical variable, `form` that distinguishes between laps run in the year 2024 ("new", as Tyler started his rehab in January 2024) and all prior years ("old"). Identify the average steps per minute for laps by form and pace, and generate a table showing these values with each year as a row and paces as columns. Make sure that `slow` speed is the second column, `medium` speed is the third column, and `fast` speed is the fourth column (hint: think about what the `select()` function does). Finally, Tyler thinks he's been doing better lately after the doctors filmed him running again and provided new advice. Summarize the minimum, mean, median, and maximum steps per minute results for all laps (regardless of pace category) run between January - June 2024 and July - October 2024 for comparison.
 
+<details>
+<summary>**DO NOT OPEN** until you are ready to see the answers! </summary>
+```{r, eval = T}
+library(tidyverse)
+url <- 'https://raw.githubusercontent.com/ucd-cepb/R-DAVIS/refs/heads/master/data/tyler_activity_laps_10-24.csv'
+lap_dt <- read_csv(url)
+running_laps <- lap_dt %>% 
+  filter(mile_pace < 10 & mile_pace > 5) %>%
+  filter(sport == 'running') %>%
+  mutate(pace_cat = case_when(mile_pace < 6 ~ 'hard',
+                           mile_pace >=6 & mile_pace < 8 ~ 'medium',
+                           T ~ 'easy'),
+         form = case_when(year == 2024 ~ 'new form',
+                          T ~ 'old form'))
+
+running_laps %>% group_by(form,pace_cat) %>% 
+  summarize(avg_spm = mean(steps_per_minute)) %>%
+  pivot_wider(id_cols = form,values_from = avg_spm,names_from = pace_cat) %>%
+  select(form,easy,medium,hard)
+
+running_laps %>% filter(form == 'new form') %>%
+  mutate(months = ifelse(month %in% 1:6,'early 2024','late 2024')) %>%
+  group_by(months) %>% 
+  summarize(
+    min_spm = min(steps_per_minute),
+    median_spm = median(steps_per_minute),
+    mean_spm = mean(steps_per_minute),
+    max_spm = max(steps_per_minute))
+```
+<details>
 ### <small>Week 6</small>
 
 For our week six homework, we are going to be practicing the skills we learned with ggplot during class. You will be happy to know that we are going to be using a brand new data set called `gapminder`. This data set is looking at statistics for a few different counties including population, GDP per capita, and life expectancy. Download the data using the code below. Remember, this code is looking for a folder called `data` to put the .csv in, so make sure you have a folder named `data`, or modify the code to the correct folder name. 
