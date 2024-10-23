@@ -1,0 +1,26 @@
+---
+title: "R-DAVIS 2024 Midterm"
+author: "Scott, Pozzi, Zufall"
+date: "2024-10-23"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Midterm
+
+This is the midterm exam for R-DAVIS Fall 2024. THE MIDTERM IS NOT GRADED. This is strictly meant to be an assessment of your learning thus far. You are welcome to use whatever materials you'd like. The exam is meant to take 1 hour.
+
+----------------------------
+BACKGROUND: The pandemic spurred Tyler to get back into running semi-seriously. That went pretty well until he hurt his achilles tendon pretty badly. It just would not get better, so the sports med doctors at UC Davis filmed and analyzed his running. The doctors said Tyler was getting old... and that he was overstriding--long strides that put too much pressure on his achilles when landing. So in 2024, Tyler has been practicing running using totally different form--namely, the doctors and trainers are having Tyler increase his cadence (strides per minute) while running, with the idea being that fast, short strides place less stress on the lower body. For this exam, you are going to read in data that Tyler has exported from his Garmin running watch and perform a descriptive analysis to assess how successful this effort has been.
+----------------------------
+
+----------------------------
+TASK DESCRIPTION: Read in the file at FILE NAME HERE. The file is a .csv file where each row is a "lap" from an activity Tyler tracked with his watch. Filter out any non-running activities. Next, Tyler often has to take walk breaks between laps right now because trying to change how you've run for 25 years is hard. You can assume that any lap with a pace above 10-minute-mile-pace is walking, so remove those laps. You can also assume that any lap of one minute or less, and any lap that is faster than 5-minute-mile-pace is not relevant, so remove those laps too. Create a new categorical variable, pace, that categorizes laps by pace: "fast" (< 6:00-per-mile), "medium" (6:00 to 8:00), and "slow" ( > 8:00). Create a second categorical variable, `form` that distinguishes between laps run in the year 2024 ("new", as Tyler started his rehab in January 2024) and all prior years ("old"). Identify the average steps per minute for laps by form and pace, and generate a table showing these values with each year as a row and paces as columns. Make sure that `slow` speed is the second column, `medium` speed is the third column, and `fast` speed is the fourth column (hint: think about what the `select()` function does)
+----------------------------
+
+
+
+
